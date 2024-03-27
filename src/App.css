@@ -1,0 +1,522 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding:0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.white-text{
+  color: white;
+}
+.main-color-text{
+  color: rgb(3, 139, 165);
+}
+.soft-dark-text{
+  color: #555555;
+}
+.primary-blue-bg{
+  background-color: rgb(3, 139, 165);
+}
+
+.code-space-bg{
+  background-color: rgb(37,37,55);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*
+.home-background{
+  background-image: linear-gradient(to top, #bcd8ff, #aacdff, #98c2ff, #86b7ff, #74acff);
+  /* background-image: linear-gradient(to top, #dbeaff, #c8deff, #b4d3ff, #a1c7ff, #8dbbff);/
+}
+*/
+
+.card-block-title{
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(39, 39, 39, 0.41);
+  padding-left: 5px;
+  padding: 1px;
+
+}
+.card-block{
+  text-align: start;
+  width: 50px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-size: 5px;
+}
+.indicator-outer-layer{
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: transparent;
+  border: 4px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  animation: glow infinite;
+  animation-duration: 1.5s;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+
+.indicator-inner-layer{
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.primary-text-color{
+  color:rgb(3, 139, 165);
+}
+
+
+.card-block-button{
+
+}
+
+
+.primary-button{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  color:rgb(3, 139, 165) ;
+  background-color: white;
+  transition: 2s;
+}
+.primary-button:hover{
+  animation-name:buttonHover;
+  animation-duration: 1s;
+  border: rgb(3, 139, 165) solid 1px;
+}
+
+.secondary-button{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  color:white ;
+  background-color: rgb(3, 139, 165);
+  transition: 2s;
+}
+.secondary-button:hover{
+  animation-name:buttonHover;
+  animation-duration: 1s;
+  border: rgb(3, 139, 165) solid 1px;
+}
+
+
+
+@keyframes buttonHover {
+  0%   {transform: scale(1);}
+  50%  {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+.gray-minimalist-button{
+  padding: 10px 15px;
+  border: 1px #f0f0f0 solid;
+  border-radius: 50px;
+  color:#f0f0f0 ;
+  transition: 0.3s;
+}
+
+
+.gray-minimalist-button:hover{
+  transform: scale(1.1);
+  z-index: 10;
+}
+.black-minimalist-button{
+  padding: 10px 15px;
+  border: 1px black solid;
+  border-radius: 50px;
+  color:black ;
+  transition: 0.3s;
+}
+
+
+.black-minimalist-button:hover{
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+
+.individual-icon{
+  height: 30px;
+  width: auto;
+  transition-duration: 0.4s;
+}
+
+.individual-icon:hover{
+  scale: 1.5;
+  cursor: pointer;
+}
+
+
+
+.icon-scroll,
+.icon-scroll:before{
+    position: relative;
+}
+
+.icon-scroll{
+    width: 30px;
+    height: 50px;
+    box-shadow: inset 0 0 0 1px black;
+    border-radius: 25px;
+}
+
+.icon-scroll-white{
+    width: 30px;
+    height: 50px;
+    box-shadow: inset 0 0 0 1px white;
+    border-radius: 25px;
+}
+
+/*
+.icon-scroll:before{
+    position: relative;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: black;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}*/
+
+#scroll{
+    position: relative;
+    width: 6px;
+    height: 10px;
+    background: black;
+    border-radius: 4px;
+    margin: 10px auto 0px auto;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}  
+#scroll-white{
+    position: relative;
+    width: 6px;
+    height: 10px;
+    background: white;
+    border-radius: 4px;
+    margin: 10px auto 0px auto;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}  
+
+@keyframes scroll{
+    0%{opacity: 1;}
+
+  100%{opacity: 0;
+    transform: translateY(18px);}
+}
+
+.animated-scroll-container{
+
+  align-items: center;
+ 
+}
+
+.contact-me-btn{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color:rgb(3, 139, 165) ;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.contact-me-btn:hover{
+  background-color:white ;
+  color: rgb(3, 139, 165);
+  border: 1px solid rgb(3, 139, 165);
+}
+
+
+
+.workspace-btn{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color:rgb(37,37,55) ;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.workspace-btn:hover{
+  background-color:white ;
+  color: rgb(37,37,55);
+  border: 1px solid rgb(37,37,55);
+}
+
+
+
+
+
+
+.programming-lang-icon{
+  width: 3vw;
+  height: 3vw;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 5px;
+  margin: 0px 15px;
+  
+}
+
+
+
+.title-text{
+  font-size: 38px;
+}
+
+.profile-pic{
+  border-radius: 20vw;
+  width: 20vw;
+  height: 20vw;
+}
+
+.sub-header{
+  font-size: 28px;
+}
+
+.art-background{
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/images/artBackground.png');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.art-button{
+  padding: 5px 15px;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.art-title-text{
+  font-size: 100px;
+
+}
+.text-dark-gray{
+  color: rgb(79, 79, 79);
+}
+
+
+.gallery-image{
+  cursor: pointer;
+  transition: 0.6s;
+
+}
+
+.gallery-image:hover{
+  z-index: 10;
+  transform: scale(1.05);
+
+  box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+-webkit-box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+-moz-box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+}
+
+.music-image{
+  width: 200px;
+
+  transition: 0.6s;
+  border-radius: 30px;
+}
+
+
+.gallery-image:hover{
+  z-index: 10;
+  transform: scale(1.05);
+
+  box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+-webkit-box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+-moz-box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
+}
+
+
+
+
+
+.music-bg{
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/images/musicBackground.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.music-bg:hover{
+  /*
+    Render the play button as overlay
+  */
+
+
+}
+
+.song-container{
+  min-height: 100vh;
+}
+
+
+
+.contact-me-form-container{
+  height: fit-content;
+  padding: 2% 4%;
+  border-radius: 15px;
+  border-radius: 2px #E8E8E8;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+
+
+.minimalistic-field{
+  width: 80%;
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #E8E8E8;
+}
+.minimalistic-field:focus{
+  outline: none;
+}
+.turquoise-label{
+  color: rgb(3, 139, 165);
+}
+.text-area{
+  resize: none;
+}
+
+
+
+.project-pill-frame{
+  width: fit-content;
+  padding: 5px 20px;
+  color: rgb(37,37,55);
+  background-color: transparent;
+  border: 1px solid rgb(37,37,55);
+  border-radius: 50px;
+}
+
+.project-page-title{
+  color: rgb(37,37,55);
+  font-size: 50px;
+  text-align: start;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.digital-content-container{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.leopard2a7-bg{
+  background-image: url('./assets/images/Digital/leopard2Bg.png');
+}
+
+.loading-screen{
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+}
+
+.loading-screen-img{
+  width: 25vw;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+
+.home-btn{
+  width: 8vw;
+  min-width: 150px;
+  height: auto;
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.home-btn:hover{
+  transform: scale(1.1);
+  
+}

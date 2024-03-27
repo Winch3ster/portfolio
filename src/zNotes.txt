@@ -1,0 +1,49 @@
+Things to implement
+
+12/3/2024
+- Gallery page/
+- Musical page/
+- Contact me page/
+
+13/3/2024
+- About me page/
+- My CS project page/
+    - Redgate system/
+    - Citisoft/
+    - Simulation/
+    - Bitsey/
+
+
+
+14/3/2024
+- Finalise interactive feature /
+
+15/3/2024
+- Add loading screen
+    - Create animation in blender video 
+    - 
+2
+16/3/2024
+- Link pages together/
+
+
+To be done
+- Add links to the buttons
+    - Github project links /
+    - Sketchfab links /
+    - social media links
+        - Miniature
+        - Developer/
+        - contact me/
+
+
+- Scroll effect for about me 
+
+- Add interactive home button to the pages
+
+-Screenshot about bitsey and photoshop it to mock up
+
+-Change indicator to only --> Developer, Arts, Contact me /
+
+
+-implement email feature
