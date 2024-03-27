@@ -1,11 +1,78 @@
-import React from 'react'
+import React, {useState, useRef} from 'react'
 import linkedinLogo from '../assets/icons/linkedin.png'
 import instagramLogo from '../assets/icons/instagram.png'
 import twitterLogo from '../assets/icons/twitter.png'
 import NavigationBar from '../components/NavigationBar.jsx'
+import Alert from '../components/Alert.jsx'
+import emailjs from '@emailjs/browser'
+
+
+const useAlert = () => {
+    const [alert, setAlert] = useState({show: false, text: '', type:'danger' })
+
+
+    const showAlert = ({text, type = 'danger'}) => {
+        setAlert({show: true, text, type})
+    }
+
+
+    const hideAlert = () => 
+        setAlert({show: false, text: '', type:'danger'})
+
+
+
+
+  return {alert, showAlert, hideAlert}
+}
+
+
+
 
 const ContactMe = () => {
+    const { alert, showAlert, hideAlert} = useAlert();
+    const [form, setForm] = useState({name: '', email: '', message: ''})
+    const [isLoading, setIsLoading] = useState(false);
+    const formRef = useRef(null)
 
+    
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); //Do not reload the page
+        setIsLoading(true);
+
+        emailjs.send(
+            import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+            {
+                from_name: form.name,
+                to_name: "Kingston",
+                from_email: form.email,
+                to_email: "kingstonlee96@gmail.com",
+                message: form.message
+            },
+            import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        ).then(() => {
+            setIsLoading(false);
+            setForm({name: '', email: '', message: ''})
+            showAlert({show:true, text:'Message sent succesfully!', type:'success'});
+
+
+            setTimeout(() => {
+                hideAlert();
+               
+                setForm({name: '', email: '', message: ''});
+              }, [3000])
+
+        }).catch((error) => {
+            setIsLoading(false);
+            console.log(error)
+            showAlert({show:true, text:'Message sent failed', type:'danger'});
+        })
+    }
+  
     function navigateToInstagram(){
         window.open('https://www.instagram.com/king_st0ne/')
     }
@@ -18,11 +85,12 @@ const ContactMe = () => {
         window.open('https://twitter.com/Kingsto32692802')
     }
 
+    
 
     return (
     <>
         <NavigationBar></NavigationBar>
-        
+        {alert.show && <Alert {...alert}/>}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 px-14 py-10 soft-dark-text" style={{paddingTop:'15vw', paddingBottom:'10vw'}}>
             
             <div className='text-left'>
@@ -44,17 +112,17 @@ const ContactMe = () => {
         </div>
 
         <div className=' contact-me-form-container text-left pb-10'>
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <label className="turquoise-label" for="name">Name</label> <br />
-                <input className='minimalistic-field mb-5' type="text" id="name" name="name"/><br />
+                <input className='minimalistic-field mb-5' type="text" id="name" name="name" value={form.name} onChange={handleChange} required/><br />
 
                 <label className="turquoise-label" for="email">Email</label><br />
-                <input className='minimalistic-field mb-5' type="email" id="emailField" name="email"/><br />
+                <input className='minimalistic-field mb-5' type="email" id="emailField" name="email" value={form.email} onChange={handleChange} required/><br />
 
                 <label className="turquoise-label" for="message">Message</label><br />
-                <textarea className='minimalistic-field text-area mb-10' name="message" id="messageField" ></textarea><br />
+                <textarea className='minimalistic-field text-area mb-10' name="message" id="messageField" value={form.message} onChange={handleChange} required></textarea><br />
 
-                <div className='rounded px-10 py-2 primary-blue-bg w-fit' id="submit-btn-container"><button style={{color:'white'}}>Submit</button></div>
+                <div className='rounded px-10 py-2 primary-blue-bg w-fit' id="submit-btn-container"><button type='submit' style={{color:'white'}}>{isLoading ? 'Sending...' : 'Send Message'}</button></div>
 
             </form>       
         </div>

@@ -21,17 +21,7 @@ export const codingProjects = [
         githubLink: "https://github.com/Winch3ster/Broker-Petrol",
         image: brokerPetrolImg,
         imageOnLeft: true
-    },
-
-    {
-        companyName: "Bitsey Studio",
-        name:"E-commerce Website",
-        type: "E-commerce Concept",
-        description: " Bitsey Studio is a hypothetical e-commerce website designed by me as a part of my web development assignment. However, I have expanded the idea into a game development company similar to EA and Ubisoft.",
-        githubLink: "https://github.com/Winch3ster/Bitsey-2",
-        image: brokerPetrolImg,
-        imageOnLeft: false
-    },
+    }
 ]
 
 

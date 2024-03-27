@@ -8,6 +8,9 @@ import leopard2a7 from '../assets/images/Digital/leopard2Bg.png'
 import morrigan from '../assets/images/Digital/acRogueLowPoly.jpg'
 
 import mg3 from '../assets/images/Digital/mg3.jpg'
+
+
+import HomeButton from '../components/HomeButton'
 const DigitalModelGallery = () => {
   return (
     <div>
@@ -48,7 +51,7 @@ const DigitalModelGallery = () => {
             sketchfabLink={'https://skfb.ly/oSuwI'}
         />
 
-
+<HomeButton></HomeButton>
     </div>
   )
 }

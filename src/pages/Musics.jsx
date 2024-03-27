@@ -3,7 +3,7 @@ import NavigationBar from '../components/NavigationBar'
 
 import afterdark from '../assets/images/music/afterdark.jpg'
 import ectasy from '../assets/images/music/ectasy.jpg'
-
+import HomeButton from '../components/HomeButton'
 
 const Musics = () => {
   return (
@@ -52,7 +52,7 @@ const Musics = () => {
             </div>
 
         </div>
-        
+        <HomeButton></HomeButton>
     </>
   )
 }

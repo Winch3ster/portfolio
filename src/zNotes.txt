@@ -41,9 +41,9 @@ To be done
 
 - Add interactive home button to the pages
 
--Screenshot about bitsey and photoshop it to mock up
+-Screenshot about bitsey and photoshop it to mock up/
 
 -Change indicator to only --> Developer, Arts, Contact me /
 
 
--implement email feature
+-implement email feature /

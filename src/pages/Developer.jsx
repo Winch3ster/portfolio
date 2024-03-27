@@ -11,8 +11,7 @@ import python from '../assets/images/languages/python.png'
 import php from '../assets/images/languages/php.png'
 import r from '../assets/images/languages/r.png'
 
-import citisoftImage from '../assets/images/developer/citisoftApp.png'
-import brokerPetrolImage from '../assets/images/developer/brokerPetrol.png'
+import bitsey from '../assets/images/developer/bitsey.png'
 import HomeButton from '../components/HomeButton'
 //import profile from '../assets/images/languages/portfolioProfile.jpg'
 import { useNavigate } from "react-router-dom";
@@ -20,6 +19,8 @@ import { useNavigate } from "react-router-dom";
 import {codingProjects} from '../assets/constant/developer.js'
 
 const Developer = () => {
+    const screenSize = window.innerWidth
+    console.log(screenSize)
     console.log(codingProjects)
     const navigate = useNavigate();
     function navigateToContactMe(){
@@ -44,6 +45,8 @@ const Developer = () => {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+
   return (
     <>
         <NavigationBar backgroundFill={true}></NavigationBar>
@@ -96,7 +99,7 @@ const Developer = () => {
 
 
         {/*Project work space */}
-        <div className='w-full py-20 px-40' id='workspace'>
+        <div className='w-full py-20 px-10 md:px-40 lg:px-40' id='workspace'>
 
             {/* Project workspace introduction */}
             <div className='project-pill-frame'>
@@ -111,14 +114,18 @@ const Developer = () => {
           
   
             {/* Workspace project list */}
-            <div className='w-full h-fit'>
+            <div className='w-full h-fit hidden lg:block'>
                 
                 {codingProjects.map((project) => (
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 my-20' style={{borderRadius:'20px'}}>
+                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20' style={{borderRadius:'20px'}}>
                     
                         {project.imageOnLeft ? 
                         <>
-                       
+                           
+                           <div className='flex w-full h-full float-start lg:float-end' style={{alignItems:'center'}}>
+                                <img className='rounded' src={project.image} alt="" />
+                            </div>
+
                             <div className='text-left' >
                                 <h1 className='sub-header mb-5'><span className='main-color-text'>{project.companyName}</span> {project.name}</h1>
                                 <div className='project-pill-frame mb-5 '>{project.type}</div>
@@ -127,16 +134,15 @@ const Developer = () => {
                                 </p>
                                 <button className='workspace-btn my-5' onClick={() => navigateToGithub(project.githubLink)}>Github &#x2192;</button>
                             </div>
+                            
 
-                            <div className='flex w-full h-full' style={{alignItems:'center'}}>
-                                <img className='rounded' src={project.image} alt="" />
-                            </div>
+                            
                         </>
                         : 
                         <>
-                            <div className='flex w-full h-full' style={{alignItems:'center'}}>
-                                <img className='rounded' src={project.image} alt="" />
-                            </div>
+
+               
+                            
                             <div className='text-left' >
                                 <h1 className='sub-header mb-5'><span className='main-color-text'>{project.companyName}</span> {project.name}</h1>
                                 <div className='project-pill-frame mb-5 '>{project.type}</div>
@@ -147,6 +153,12 @@ const Developer = () => {
                             </div>
 
                            
+                            
+                            <div className='flex w-full h-full' style={{alignItems:'center'}}>
+                                <img className='rounded' src={project.image} alt="" />
+                            </div>
+                            
+                           
                         </>
                         
                         }
@@ -156,10 +168,61 @@ const Developer = () => {
 
                 ))}
 
+                </div>
+
+
+                {/* Workspace project list 
+                */}
+                <div className='w-full h-fit block lg:hidden'>
+                                
+                {codingProjects.map((project) => (
+                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20' style={{borderRadius:'20px'}}>
+                    
+                       
+                           
+                        <div className='flex w-full h-full float-start lg:float-end' style={{alignItems:'center'}}>
+                            <img className='rounded' src={project.image} alt="" />
+                        </div>
+
+                        <div className='text-left' >
+                            <h1 className='sub-header mb-5'><span className='main-color-text'>{project.companyName}</span> {project.name}</h1>
+                            <div className='project-pill-frame mb-5 '>{project.type}</div>
+                            <p className='soft-dark-text'>
+                                {project.description}
+                            </p>
+                            <button className='workspace-btn my-5' onClick={() => navigateToGithub(project.githubLink)}>Github &#x2192;</button>
+                        </div>
+
+                    </div>
+
+                ))}
+
+                </div>
+
+
+                <div className='flex w-full h-full md:col-span-2 lg:col-span-2' style={{alignItems:'center', paddingBottom:'2.5rem'}}>
+                    <img className='rounded' src={bitsey} alt="" />
+                </div>
+                <div className='text-left' >
+                    <h1 className='sub-header mb-5'><span className='main-color-text'>Bitsey Studio</span> E-commerce Website</h1>
+                    <div className='project-pill-frame mb-5 '>E-commerce Concept</div>
+                    <p className='soft-dark-text'>
+                    Bitsey Studio is a hypothetical e-commerce website designed by me as a part of my web development assignment. 
+                    However, I have expanded the idea into a game development company similar to EA and Ubisoft.
+                    </p>
+                    <button className='workspace-btn my-5'>Github &#x2192;</button>
+                </div>
+
+                    
+
+              
+
+            </div>
+
 
             
-            </div>
-        </div>
+       
+       
         <HomeButton></HomeButton>
     </>
   )
