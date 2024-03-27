@@ -38,8 +38,9 @@ To be done
 
 
 - Scroll effect for about me 
+-small screen
 
-- Add interactive home button to the pages
+- Add interactive home button to the pages / 
 
 -Screenshot about bitsey and photoshop it to mock up/
 
