@@ -21,14 +21,14 @@ const Gallery = () => {
       <NavigationBar></NavigationBar>
 
       <div className='flex justify-center mt-32' >
-        <div>
+        <div className='digital-miniature-title'>
           <h1 className='title-text text-center'>MINIATURES</h1>
           <div className='flex justify-center mt-5'><img src={arrowDown} alt="" style={{width:'15px', height:'15px'}}/></div>
         </div>
       </div>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-10 px-14 mt-20 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-10 px-14 mt-20 mb-10 render-miniature-animation">
       
         <div className='gallery-image'>
             <img src={imgOne} alt="" style={{height:'auto'}}/>

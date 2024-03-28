@@ -28,14 +28,10 @@ const DigitalModelGallery = () => {
         if(entry.target.classList.contains('.hidden-digital-element-right')){
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in-digital-right');
-          }else{
-             
           }
         }else{
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in-digital-left');
-          }else{
-            
           }
         }
           
@@ -55,7 +51,7 @@ const DigitalModelGallery = () => {
         <NavigationBar></NavigationBar>
         
         <div className='flex justify-center my-32' >
-        <div>
+        <div className='digital-miniature-title'>
           <h1 className='title-text text-center'>DIGITAL MODEL</h1>
           <div className='flex justify-center mt-5'><img src={arrowDown} alt="" style={{width:'15px', height:'15px'}}/></div>
         </div>
