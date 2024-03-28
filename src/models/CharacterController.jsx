@@ -1,7 +1,7 @@
-import { useKeyboardControls, PerspectiveCamera, CameraControls } from "@react-three/drei";
+import { useKeyboardControls, PerspectiveCamera, CameraControls, Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { CapsuleCollider, RigidBody, vec3 } from "@react-three/rapier";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Controls } from "../pages/Home";
 import MainCharacter from "./MainCharacter";
 import character from '../assets/3d/PortfolioMainCharacterThreeJSReady2.glb';
@@ -267,16 +267,11 @@ export const CharacterController = () => {
     }
   }
 
- 
-
-
-
-
   return (
-    <group>
+
+    <group
+    >
        
-  
-   
       <CameraControls ref={camera}/>
 
       <RigidBody
@@ -301,6 +296,7 @@ export const CharacterController = () => {
         </group>
       </RigidBody>
     </group>
+    
   );
 };
 

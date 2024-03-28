@@ -5,8 +5,11 @@ import React from 'react'
 
 
 
-const Indicator = ({description, position, rotateY, page, ...props}) => {
-
+const Indicator = ({description, position, rotateY, page, positionFitScreen,darkText, ...props}) => {
+    let textColor = 'white'
+    if (darkText){
+      textColor = '#1c1c1c'
+    }
     const navigate = useNavigate();
 
     function ShowCard(){
@@ -43,9 +46,15 @@ const Indicator = ({description, position, rotateY, page, ...props}) => {
     rotateY={rotateY}
     
     rotateOnWorldAxis={[0,-Math.PI / 2,0]}
+    
+  
     >
-        <h1 className='w-40 text-left ml-3 px-3' style={{color: '#1c1c1c'}} >{description}</h1>
-        <div className='indicator-outer-layer' onClick={NavigateTo}>
+        {positionFitScreen ? 
+          <h1 className=' w-40 text-left px-3' style={{color: textColor, marginLeft:'-110px'}} >{description}</h1>
+ 
+        : <h1 className=' w-40 text-left ml-3 px-3 z-0' style={{color:textColor}} >{description}</h1>
+        }
+        <div className='indicator-outer-layer ' onClick={NavigateTo}>
               <div className='indicator-inner-layer'></div>
         </div>   
     </Html>

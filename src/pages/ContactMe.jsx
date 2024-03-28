@@ -91,7 +91,7 @@ const ContactMe = () => {
     <>
         <NavigationBar></NavigationBar>
         {alert.show && <Alert {...alert}/>}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 px-14 py-10 soft-dark-text" style={{paddingTop:'15vw', paddingBottom:'10vw'}}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 px-7 md:px-14 lg:px-14 py-10 soft-dark-text mt-6 md:mt-0 lg:mt-0" style={{paddingTop:'15vw', paddingBottom:'10vw'}}>
             
             <div className='text-left'>
                 <h1 className='title-text main-color-text'>Contact me</h1>
@@ -114,13 +114,13 @@ const ContactMe = () => {
         <div className=' contact-me-form-container text-left pb-10'>
             <form onSubmit={handleSubmit}>
                 <label className="turquoise-label" for="name">Name</label> <br />
-                <input className='minimalistic-field mb-5' type="text" id="name" name="name" value={form.name} onChange={handleChange} required/><br />
+                <input className='minimalistic-field mb-5 w-full md:w-5/6' type="text" id="name" name="name" value={form.name} onChange={handleChange} required/><br />
 
                 <label className="turquoise-label" for="email">Email</label><br />
-                <input className='minimalistic-field mb-5' type="email" id="emailField" name="email" value={form.email} onChange={handleChange} required/><br />
+                <input className='minimalistic-field mb-5 w-full md:w-5/6' type="email" id="emailField" name="email" value={form.email} onChange={handleChange} required/><br />
 
                 <label className="turquoise-label" for="message">Message</label><br />
-                <textarea className='minimalistic-field text-area mb-10' name="message" id="messageField" value={form.message} onChange={handleChange} required></textarea><br />
+                <textarea className='minimalistic-field text-area mb-10 w-full md:w-5/6' name="message" id="messageField" value={form.message} onChange={handleChange} required></textarea><br />
 
                 <div className='rounded px-10 py-2 primary-blue-bg w-fit' id="submit-btn-container"><button type='submit' style={{color:'white'}}>{isLoading ? 'Sending...' : 'Send Message'}</button></div>
 

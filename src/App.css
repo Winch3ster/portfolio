@@ -94,6 +94,7 @@
   cursor: pointer;
   animation: glow infinite;
   animation-duration: 1.5s;
+  z-index: 1;
 }
 
 @keyframes glow {
@@ -116,6 +117,7 @@
   height: 15px;
   border-radius: 20px;
   background-color: white;
+  z-index: 1;
 }
 
 .primary-text-color{
@@ -325,19 +327,13 @@
 
 
 
-.title-text{
-  font-size: 38px;
-}
-
 .profile-pic{
   border-radius: 20vw;
   width: 20vw;
   height: 20vw;
 }
 
-.sub-header{
-  font-size: 28px;
-}
+
 
 .art-background{
   width: 100%;
@@ -384,11 +380,73 @@
 -moz-box-shadow: -1px 10px 49px 1px rgba(0,0,0,0.69);
 }
 
+@media only screen and (max-width: 640px) {
+  #root {
+    width: 100%;
+    margin: 0;
+    padding:0;
+    text-align: center;
+    overflow-x: hidden;
+    font-size: 16px;
+  }
+  
+  .music-image{
+    width: 120px;
+  
+    transition: 0.6s;
+    border-radius: 30px;
+  }
+
+  .title-text{
+    font-size: 24px;
+  }
+  .sub-header{
+    font-size: 20px;
+  }
+
+  .project-page-title{
+    color: rgb(37,37,55);
+    font-size: 24px;
+    text-align: start;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 641px) {
 .music-image{
   width: 200px;
 
   transition: 0.6s;
   border-radius: 30px;
+}
+
+.title-text{
+  font-size: 38px;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding:0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.sub-header{
+  font-size: 28px;
+}
+
+
+.project-page-title{
+  color: rgb(37,37,55);
+  font-size: 50px;
+  text-align: start;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 }
 
 
@@ -414,6 +472,16 @@
   align-items: center;
 }
 
+
+.music-bg-small{
+  width: 100%;
+  height: 40vh;
+  background-image: url('./assets/images/musicBackground.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
 .music-bg:hover{
   /*
     Render the play button as overlay
@@ -423,7 +491,8 @@
 }
 
 .song-container{
-  min-height: 100vh;
+  min-height: 50vh;
+  padding-bottom: 70px;
 }
 
 
@@ -439,7 +508,6 @@
 
 
 .minimalistic-field{
-  width: 80%;
   padding: 5px 5px;
   border-radius: 5px;
   border: none;
@@ -466,13 +534,7 @@
   border-radius: 50px;
 }
 
-.project-page-title{
-  color: rgb(37,37,55);
-  font-size: 50px;
-  text-align: start;
-  font-weight: bold;
-  margin-top: 20px;
-}
+
 
 
 .digital-content-container{

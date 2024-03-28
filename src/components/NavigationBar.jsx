@@ -56,14 +56,14 @@ const NavigationBar = ({backgroundFill, ...props}) => {
             <li style={{marginRight:'2.5vw'}}><Link to={'/contact-me'}>Contact</Link></li>
           </ul>
 
-          <div className='flex md:hidden lg:hidden float-end justify-end align-middle pr-10' style={{width: "70%", alignItems:'center', cursor: 'pointer'}}>
+          <div className='flex md:hidden lg:hidden float-end justify-end align-middle pr-5' style={{width: "70%", alignItems:'center', cursor: 'pointer'}}>
             <img src={hmaburgerMenu} alt="hamburger menu" style={{height:'30px', width:'30px'}} onClick={() => setNavOpened(true)}/>
           </div>
 
 
 
           <div
-            className={`fixed right-0 top-0 h-full w-1/2 bg-white z-100 overflow-y-auto transition-transform duration-300 ${
+            className={`fixed right-0 top-0 h-full w-1/2 bg-white z-50 overflow-y-auto transition-transform duration-300 ${
               navOpened ? 'transform translate-x-0' : 'transform translate-x-full'
             }`}>
             <div className='flex justify-end mr-5 mt-5'>

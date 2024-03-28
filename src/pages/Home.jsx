@@ -96,7 +96,7 @@ const Home = () => {
         <Canvas  dpr={[1, 2]} >
 
         
-        <Stage cpreset="rembrandt" intensity={0.1}  environment="sunset" >
+        <Stage cpreset="rembrandt" intensity={0.1}  environment="sunset">
 
         <Text  rotation-y={0.4} position={[-45, 6, 0]} color="gray" scale={[10, 10, 10]} >Welcome</Text>
 
@@ -105,11 +105,11 @@ const Home = () => {
             <ambientLight intensity={0.5}></ambientLight>
 
            
-                <Indicator description={"Developer"} position={[-1,7,-10]} page={0}></Indicator>
+                <Indicator description={"Developer"} position={[-1,7,-10]} page={0} darkText={true}></Indicator>
 
-                <Indicator description={"Contact Me"} position={[-15,7,10]} page={4}></Indicator>
+                <Indicator description={"Contact Me"} position={[-15,7,10]} page={4} darkText={true}></Indicator>
 
-                <Indicator description={"Visit Arts Site"} position={[-33,5,28]} page={5}></Indicator>
+                <Indicator description={"Visit Arts Site"} position={[-33,5,28]} page={5} darkText={true}></Indicator>
 
                 <Model scale={[6, 6, 6]} />                
 
@@ -122,7 +122,6 @@ const Home = () => {
         
        
         </Canvas>
-                    
         </KeyboardControls>
     </section>
     </Suspense>

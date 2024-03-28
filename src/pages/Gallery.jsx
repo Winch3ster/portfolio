@@ -66,7 +66,10 @@ const Gallery = () => {
         <img src={instaIcon} alt="instagram" onClick={navigateToInstagram} style={{width:'40px', height:'40px', cursor: 'pointer'}}/>
     </div>
     
-    <HomeButton></HomeButton>
+    <div className='hidden lg:block'>
+        <HomeButton></HomeButton>
+
+      </div>       
     </>
    
   )

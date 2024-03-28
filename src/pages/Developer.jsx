@@ -50,10 +50,16 @@ const Developer = () => {
   return (
     <>
         <NavigationBar backgroundFill={true}></NavigationBar>
-        <div className='bg-gray-100 h-screen pt-32'>
-            <div className=' w-full flex  justify-center align-middle' style={{height: "60vh", alignItems:"center"}}>
 
-                <div className=' text-left w-1/4 mr-10 h-fit'>
+        <div className='bg-gray-100 h-fit pt-32 pb-20 md:mb-0 lg:mb-0'>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 px-14 mt-5 md:mt-20 lg:mt-20 mb-10">
+
+                <div className=' w-1/4  ml-10'>
+                    <img className='profile-pic' src={''} alt="" />
+                </div>
+
+                <div className='text-start'>
                     <h1 className='font-bold title-text'>Computer Science Student 👋</h1>
                     <p className='my-5'><span style={{color:"rgb(3, 139, 165)", fontSize:"24px"}}>Hi, I'm Kingston Lee.</span> A passionate third year computer science bachelor student based in Malaysia.</p>
                     <div className='flex'>
@@ -65,19 +71,16 @@ const Developer = () => {
                     <button className='workspace-btn my-5 mr-10' onClick={scrollToWorkspace}>My workspace</button>
 
                     <button className='contact-me-btn my-5' onClick={navigateToContactMe}>Contact me</button>
-                    
 
                 </div>
 
-                <div className=' w-1/4  ml-10'>
-                    <img className='profile-pic' src={''} alt="" />
-                </div>
+                
 
             </div>
                 
 
 
-            <div style={{marginLeft:'21vw'}}>
+            <div className='hidden md:block lg:block' style={{marginLeft:'21vw'}}>
                 
                 <div className='flex ' style={{alignItems:"center"}}>
                     <p className='text-left mr-16 font-bold'>Programming language |</p>
@@ -91,6 +94,23 @@ const Developer = () => {
                         <img className='programming-lang-icon' src={r} alt=""/>
                     </div>
                 </div>
+            </div>
+
+
+            <div className='block md:hidden lg:hidden' >
+                <p className='font-bold mb-10'>Programming languages</p>
+                
+                    
+                <div className='grid grid-cols-4 w-5/6 gap-y-5 m-auto'>
+                    
+                    <img className='programming-lang-icon' src={csharp} alt=""/>
+                    <img className='programming-lang-icon' src={java} alt=""/>
+                    <img className='programming-lang-icon' src={js} alt=""/>
+                    <img className='programming-lang-icon' src={python} alt=""/>
+                    <img className='programming-lang-icon' src={php} alt=""/>
+                    <img className='programming-lang-icon' src={r} alt=""/>
+                </div>
+                
             </div>
 
 
@@ -223,7 +243,9 @@ const Developer = () => {
             
        
        
-        <HomeButton></HomeButton>
+        <div className='hidden lg:block'>
+            <HomeButton></HomeButton>
+      </div>   
     </>
   )
 }

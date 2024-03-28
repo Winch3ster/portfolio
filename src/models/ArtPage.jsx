@@ -52,6 +52,17 @@ Authors:
 */
 const ArtScene = (props) =>  {
     const { nodes, materials } = useGLTF(model);
+
+    function adjustIndicatorMarkToFitScreen(){
+      let adjustToFitScreen = false;
+      if(window.innerWidth < 768){
+        adjustToFitScreen = true;
+      }
+  
+      return adjustToFitScreen
+    }
+
+    let adjustToFitScreen = adjustIndicatorMarkToFitScreen()
     return (
       <group {...props} dispose={null} rotateOnAxis={[0, 30, 0]}>
         
@@ -148,7 +159,7 @@ const ArtScene = (props) =>  {
         
 
         <group>
-          <Indicator description={"Digital Modelling"} page={3} position={[-2.2, 2.6, -1.6]}></Indicator>
+          <Indicator  positionFitScreen={adjustToFitScreen} description={"Digital Modelling"} page={3} position={[-2.2, 3.1, -1.6]}></Indicator>
           <mesh
             name="abstract_cube"
             castShadow

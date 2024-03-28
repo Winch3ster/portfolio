@@ -23,8 +23,41 @@ const DigitalModelGallery = () => {
         </div>
       </div>
 
+      <div className='block md:hidden lg:hidden'>
+      <DigitalModelCard 
+          id={"leopard2a7"} 
+          modelName={"Leopard 2A7 Variant"}
+          modelDescription={" The Leopard 2 is a third generation German main battle tank for the Bundeswehr. Developed by Krauss-Maffei, it features a 120mm smoothbore gun, advanced fire control system, and improved armor protection, making it a formidable force on the battlefield."}   
+          image={leopard2a7}
+          sketchfabLink={'https://skfb.ly/oHCYU'}
+          isSmallScreen={true}
+        />
+        
+       
 
         <DigitalModelCard 
+          id={"lowpolyMorrigan"} 
+          modelName={"Low Poly Assassin Creed Rogue Morrigan Diorama"}
+          modelDescription={"Inpired by Ubisoft's 2014 Assassin Creed Rogue, it features the main theme of the game which takes place in a winter scenery with the Morrigan."}   
+          image={morrigan}
+          sketchfabLink={'https://skfb.ly/oSu9L'}
+          isSmallScreen={true}
+
+        />
+
+        <DigitalModelCard 
+            id={"mg3"} 
+            modelName={"Bundeswehr MG3"}
+            modelDescription={"The MG3 is a powerful and reliable machine gun that has been in service since the 1960s. Derived from MG42 in the Second World War, it continues to serve to this day as a squad support weapon and a vehicle-mounted machine gun."}   
+            image={mg3}
+            sketchfabLink={'https://skfb.ly/oSuwI'}
+            isSmallScreen={true}
+        />
+      </div>
+
+
+      <div className='hidden md:block lg:block'>
+      <DigitalModelCard 
           id={"leopard2a7"} 
           modelName={"Leopard 2A7 Variant"}
           modelDescription={" The Leopard 2 is a third generation German main battle tank for the Bundeswehr. Developed by Krauss-Maffei, it features a 120mm smoothbore gun, advanced fire control system, and improved armor protection, making it a formidable force on the battlefield."}   
@@ -51,7 +84,12 @@ const DigitalModelGallery = () => {
             sketchfabLink={'https://skfb.ly/oSuwI'}
         />
 
-<HomeButton></HomeButton>
+      </div>
+
+      <div className='hidden lg:block'>
+        <HomeButton></HomeButton>
+
+      </div>   
     </div>
   )
 }

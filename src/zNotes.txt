@@ -37,8 +37,15 @@ To be done
         - contact me/
 
 
-- Scroll effect for about me 
+
 -small screen
+    -art page /
+    -Modelling /
+    -guitar /
+    -miniatures /
+    -developer /
+    -Interactive option
+
 
 - Add interactive home button to the pages / 
 
