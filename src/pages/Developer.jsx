@@ -53,11 +53,18 @@ const Developer = () => {
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('fade-in');
+            if(entry.target.classList.contains('title')){
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('digital-miniature-title');
+                }
             }else{
-                entry.target.classList.remove('fade-in');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }else{
+                    entry.target.classList.remove('fade-in');
+                }
             }
+            
           });
         });
     
@@ -145,8 +152,8 @@ const Developer = () => {
                 My Projects
             </div>
 
-            <div>
-                <h1 className='project-page-title'>A Portfolio of Software Development Adventures</h1>
+            <div className='hidden-element title'>
+                <h1 className='project-page-title '>A Portfolio of Software Development Adventures</h1>
              
             </div>
 
