@@ -586,3 +586,11 @@
 .h-half-view{
   height: 10vh;
 }
+
+.hidden-element{
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.fade-in{
+  opacity: 1;
+}

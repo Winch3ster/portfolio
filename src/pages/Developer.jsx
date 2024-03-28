@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import NavigationBar from '../components/NavigationBar'
 import linkedin from '../assets/icons/linkedin.png'
 import githubLogo from '../assets/icons/github.png'
@@ -46,6 +46,25 @@ const Developer = () => {
         }
     };
 
+    useEffect(() => {
+
+        const hiddenElements = document.querySelectorAll('.hidden-element')
+
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in');
+            }else{
+                entry.target.classList.remove('fade-in');
+            }
+          });
+        });
+    
+       hiddenElements.forEach((el) => observer.observe(el))
+    
+       
+      }, []);
 
   return (
     <>
@@ -137,7 +156,7 @@ const Developer = () => {
             <div className='w-full h-fit hidden lg:block'>
                 
                 {codingProjects.map((project) => (
-                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20' style={{borderRadius:'20px'}}>
+                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20 hidden-element' style={{borderRadius:'20px'}}>
                     
                         {project.imageOnLeft ? 
                         <>
@@ -196,7 +215,7 @@ const Developer = () => {
                 <div className='w-full h-fit block lg:hidden'>
                                 
                 {codingProjects.map((project) => (
-                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20' style={{borderRadius:'20px'}}>
+                    <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 gap-y-10 my-20 hidden-element' style={{borderRadius:'20px'}}>
                     
                        
                            
@@ -220,29 +239,24 @@ const Developer = () => {
                 </div>
 
 
-                <div className='flex w-full h-full md:col-span-2 lg:col-span-2' style={{alignItems:'center', paddingBottom:'2.5rem'}}>
-                    <img className='rounded' src={bitsey} alt="" />
-                </div>
-                <div className='text-left' >
-                    <h1 className='sub-header mb-5'><span className='main-color-text'>Bitsey Studio</span> E-commerce Website</h1>
-                    <div className='project-pill-frame mb-5 '>E-commerce Concept</div>
-                    <p className='soft-dark-text'>
-                    Bitsey Studio is a hypothetical e-commerce website designed by me as a part of my web development assignment. 
-                    However, I have expanded the idea into a game development company similar to EA and Ubisoft.
-                    </p>
-                    <button className='workspace-btn my-5'>Github &#x2192;</button>
-                </div>
+                <div className='hidden-element'>
+                    <div className='flex w-full h-full md:col-span-2 lg:col-span-2' style={{alignItems:'center', paddingBottom:'2.5rem'}}>
+                        <img className='rounded' src={bitsey} alt="" />
+                    </div>
+                    <div className='text-left' >
+                        <h1 className='sub-header mb-5'><span className='main-color-text'>Bitsey Studio</span> E-commerce Website</h1>
+                        <div className='project-pill-frame mb-5 '>E-commerce Concept</div>
+                        <p className='soft-dark-text'>
+                        Bitsey Studio is a hypothetical e-commerce website designed by me as a part of my web development assignment. 
+                        However, I have expanded the idea into a game development company similar to EA and Ubisoft.
+                        </p>
+                        <button className='workspace-btn my-5'>Github &#x2192;</button>
+                    </div>
 
-                    
-
-              
+                </div>
 
             </div>
 
-
-            
-       
-       
         <div className='hidden lg:block'>
             <HomeButton></HomeButton>
       </div>   
