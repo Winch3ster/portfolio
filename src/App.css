@@ -594,3 +594,30 @@
 .fade-in{
   opacity: 1;
 }
+
+.hidden-digital-element-left{
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1.5s;
+
+}
+
+.hidden-digital-element-right{
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s, transform 1.5s;
+
+}
+
+
+.fade-in-digital-right{
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+
+
+.fade-in-digital-left{
+  transform: translateX(0%);
+  opacity: 1;
+}
