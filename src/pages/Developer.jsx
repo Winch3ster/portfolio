@@ -20,8 +20,7 @@ import {codingProjects} from '../assets/constant/developer.js'
 
 const Developer = () => {
     const screenSize = window.innerWidth
-    console.log(screenSize)
-    console.log(codingProjects)
+   
     const navigate = useNavigate();
     function navigateToContactMe(){
         navigate('../contact-me')
@@ -257,7 +256,7 @@ const Developer = () => {
                         Bitsey Studio is a hypothetical e-commerce website designed by me as a part of my web development assignment. 
                         However, I have expanded the idea into a game development company similar to EA and Ubisoft.
                         </p>
-                        <button className='workspace-btn my-5' onClick={navigateToGithub("https://github.com/Winch3ster/Bitsey-2")}>Github &#x2192;</button>
+                        <button className='workspace-btn my-5' onClick={() => navigateToGithub("https://github.com/Winch3ster/Bitsey-2")}>Github &#x2192;</button>
                     </div>
 
                 </div>

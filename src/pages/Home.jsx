@@ -29,6 +29,30 @@ export const Controls = {
     jump: "jump",
     };
 
+
+    
+const Notification = () => {
+    return (
+        <Html 
+  
+    position={[16,1,-7]}
+
+    
+    rotateOnWorldAxis={[0,-Math.PI / 2,0]}
+    >
+      
+        <h1 className=' w-40 text-left px-3' style={{color: 'white', marginLeft:'-110px'}} >Mini games coming soon</h1>
+
+        <div className='exclamation-mark-container'>
+            <div className='exclamation-mark-upper'></div>
+            <div className='exclamation-mark-lower'></div>
+        </div>   
+    </Html>
+    );
+  };
+
+  
+
 const Home = () => {
 
 
@@ -51,7 +75,7 @@ const Home = () => {
         []
       );
 
-
+  
     //Adjust the world size according to screen size
     const adjustModelSize =() => {
         let screenSize = null;
@@ -89,13 +113,19 @@ const Home = () => {
 //controls={ref} 
   return (
     <Suspense fallback={<Loader></Loader>}>
+    
+  
+
+    
     <section className='w-full h-screen relative' >
        
         <KeyboardControls map={map}>
-        
-        <Canvas  dpr={[1, 2]} >
 
         
+        <Canvas  dpr={[1, 2]} >
+        
+       <Notification />
+
         <Stage cpreset="rembrandt" intensity={0.1}  environment="sunset">
 
         <Text  rotation-y={0.4} position={[-45, 6, 0]} color="gray" scale={[10, 10, 10]} >Welcome</Text>
