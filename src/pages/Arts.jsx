@@ -35,18 +35,19 @@ const Arts = () => {
     let screenPosition  = [0, -6.5, -43];
     let textScale = [1,1,1]
     let isSmallScreen = false;
-    let cameraPosition = [0, 10, 8];
+    let cameraPosition = [0, 2.5, 10];
 
     if(window.innerWidth < 768){
       screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, -1.3, 0];
+      screenPosition = [-0.8, -1.3, 0];
+
       textScale = [0.5,0.5,0.5]
       isSmallScreen = true;
       cameraPosition = [0, 1, 10];
     }else{
 
       screenScale = [0.7, 0.7, 0.7];
-      screenPosition = [0, -1.3, 0];
+      screenPosition = [-1, -1.3, 0];
     }
 
     return [screenScale, screenPosition, textScale, isSmallScreen, cameraPosition]
@@ -63,7 +64,7 @@ const Arts = () => {
 
 
       <Canvas
-        className='w-full h-screen z-0 relative'
+        className='w-full h-screen z-0 relative overflow-hidden'
         shadows="soft"
         dpr={[1, perfSucks ? 1.5 : 2]}
         eventSource={document.getElementById('root')}
@@ -79,7 +80,7 @@ const Arts = () => {
 
         <group scale={modelScale} position={modelPosition} rotation={[0, -1.6, 0]}>
           <ArtScene />
-          <AccumulativeShadows frames={100} alphaTest={0.1} opacity={0.9} color="#fa8c55" scale={20} position={[0, -0.0001, 0]}>
+          <AccumulativeShadows frames={100} alphaTest={0.1} opacity={0.9} color="#fa8c55" scale={20} position={[0, 0.1, 0]}>
             <RandomizedLight amount={5} radius={6} ambient={0.3} intensity={1} position={[-1.5, 2.5, -2.5]} bias={0.001} />
           </AccumulativeShadows>
           

@@ -72,7 +72,7 @@ const NavigationBar = ({backgroundFill, ...props}) => {
             <ul className="px-10 text-start main-color-text">
               
               <li className='my-5 '> <Link to={'/developer'}>Developer</Link></li>
-              <li className='my-5'> <Link to={'/arts'}>Arts</Link></li>
+              <li className='my-5'> <Link to={'/arts'}>Arts Menu</Link></li>
               <li className='my-5'><Link to={'/contact-me'}>Contact</Link></li>
             </ul>
           </div>

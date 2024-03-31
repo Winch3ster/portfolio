@@ -17,7 +17,7 @@ export const codingProjects = [
         companyName: "Broken Petrol Ltd",
         name:"Gas Station Simulation",
         type: "Software Assignment",
-        description: " The owners of Broken Petrol Ltd are own a petrol station on the M25 and every student is tasked with the design, implement, test and document an automated demoof a Petrol Station Management app.",
+        description: " The owners of Broken Petrol Ltd are own a petrol station on the M25 and every student is tasked with the design, implement, test and document an automated demo of a Petrol Station Management app.",
         githubLink: "https://github.com/Winch3ster/Broker-Petrol",
         image: brokerPetrolImg,
         imageOnLeft: true

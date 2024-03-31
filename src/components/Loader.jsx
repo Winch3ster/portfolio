@@ -17,9 +17,9 @@ const Loader = () => {
         height={5}
         width={250}
       />
-
-      <p className='mt-10'>Loading assets...</p>
       
+      <p className='mt-10'>Loading assets...</p>
+      <p className='mt-2'>Illustration created using Krita</p>
 
     </div>
      

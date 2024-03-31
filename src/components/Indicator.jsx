@@ -41,18 +41,18 @@ const Indicator = ({description, position, rotateY, page, positionFitScreen,dark
 
   return (
     <Html 
+  
     position={position}
 
     rotateY={rotateY}
     
     rotateOnWorldAxis={[0,-Math.PI / 2,0]}
-    
   
     >
         {positionFitScreen ? 
           <h1 className=' w-40 text-left px-3' style={{color: textColor, marginLeft:'-110px'}} >{description}</h1>
  
-        : <h1 className=' w-40 text-left ml-3 px-3 z-0' style={{color:textColor}} >{description}</h1>
+        : <h1 className=' w-40 text-left ml-3 px-3 z-0 ' style={{color:textColor}} >{description}</h1>
         }
         <div className='indicator-outer-layer ' onClick={NavigateTo}>
               <div className='indicator-inner-layer'></div>

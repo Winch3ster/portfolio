@@ -75,7 +75,7 @@ const Index = () => {
             </Stage>
           </Canvas>
 
-          <Canvas shadows dpr={[1, 2]} className=' bg-blue-100 block lg:hidden' style={{height:'50vh'}}>
+          <Canvas shadows dpr={[1, 2]} className=' bg-blue-100 block lg:hidden' style={{height:'100vh'}}>
             <Stage cpreset="rembrandt" intensity={0.1} contactShadow={true} environment="sunset" >
 
               <group position={[2, 1.25, 1]}>
@@ -87,7 +87,7 @@ const Index = () => {
             </Stage>
           </Canvas>
 
-      <div className='z-0 w-full text-center absolute bottom-5 md:hidden lg:hidden text-dark-gray' >
+      <div className='z-0 w-full text-center absolute bottom-6 md:hidden lg:hidden text-dark-gray' >
         <p style={{fontSize: '11px'}}>
           Interactive only available on desktop and laptop
         </p>

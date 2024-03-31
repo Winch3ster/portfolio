@@ -8,7 +8,6 @@ import Musics from './pages/Musics.jsx'
 import ContactMe from './pages/ContactMe.jsx'
 import Loader  from './components/Loader.jsx'
 
-import Testart from './pages/Testart.jsx'
 import DigitalModelGallery from './pages/DigitalModelGallery.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
