@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import NavigationBar from '../components/NavigationBar'
 import DigitalModelCard from '../components/DigitalModelCard'
 import arrowDown from '../assets/icons/down-arrow.png'
@@ -13,10 +13,17 @@ import mg3 from '../assets/images/Digital/mg3.jpg'
 import HomeButton from '../components/HomeButton'
 const DigitalModelGallery = () => {
 
+  //Default assume is large screen
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
 
+  function checkScreenSize(){
+    if(window.innerWidth < 768){
+      setIsSmallScreen(true);
+    }
+  }
   
   useEffect(() => {
-
+    checkScreenSize()
     const hiddenElements = document.querySelectorAll('.hidden-digital-element')
 
     console.log(hiddenElements)
@@ -43,9 +50,10 @@ const DigitalModelGallery = () => {
    hiddenElements.forEach((el) => observer.observe(el))
 
    
+   
   }, []);
 
-
+ 
   return (
     <div>
         <NavigationBar></NavigationBar>
@@ -57,6 +65,7 @@ const DigitalModelGallery = () => {
         </div>
       </div>
 
+      
       <div className='block md:hidden lg:hidden'>
         <div className='hidden-digital-element hidden-digital-element-left'>
           <DigitalModelCard 
@@ -99,9 +108,10 @@ const DigitalModelGallery = () => {
             isSmallScreen={true}
         />
         </div>
-      </div>
+      </div> 
 
 
+        {!(isSmallScreen) && 
       <div className='hidden md:block lg:block'>
 
       <div className='hidden-digital-element hidden-digital-element-left'>
@@ -140,6 +150,7 @@ const DigitalModelGallery = () => {
         />
       </div>
       </div>
+      }
 
       <div className='hidden lg:block'>
         <HomeButton></HomeButton>

@@ -13,7 +13,8 @@ import r from '../assets/images/languages/r.png'
 
 import bitsey from '../assets/images/developer/bitsey.png'
 import HomeButton from '../components/HomeButton'
-//import profile from '../assets/images/languages/portfolioProfile.jpg'
+import profile from '../assets/images/developer/portfolioProfile.jpeg'
+
 import { useNavigate } from "react-router-dom";
 
 import {codingProjects} from '../assets/constant/developer.js'
@@ -78,10 +79,10 @@ const Developer = () => {
 
         <div className='bg-gray-100 h-fit pt-32 pb-20 md:mb-0 lg:mb-0'>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 gap-y-10 px-14 mt-5 md:mt-20 lg:mt-20 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-y-10 px-14 mt-5 md:mt-20 lg:mt-20 mb-10">
 
-                <div className=' w-1/4  ml-10'>
-                    <img className='profile-pic' src={''} alt="" />
+                <div className='w-full flex justify-center'>
+                    <img className='profile-pic' src={profile} alt="profile" />
                 </div>
 
                 <div className='text-start'>
