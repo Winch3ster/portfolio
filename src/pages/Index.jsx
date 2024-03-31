@@ -27,7 +27,20 @@ const Index = () => {
     navigate('../arts')
   }
   
+  function scrollToContent(){
+    const section = document.getElementById('index-content');
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
  
+  function scrollToWorldPreview(){
+    const section = document.getElementById('index-world-preview');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+  }
+
   return (
 
     <Suspense fallback={<Loader></Loader>}> 
@@ -37,7 +50,7 @@ const Index = () => {
       
       
         <NavigationBar className='absolute top-0 z-20' backgroundFill={false}></NavigationBar>
-        
+        <div id='index-content'></div>
         <div className='absolute w-1/3 top-40 text-left z-10 hidden lg:block md:block'>
           <div className='bg-white w-1/2 p-8 text-center primary-text-color'><h1>Hey there!</h1></div>
           <p className='ml-28 mt-10'> 
@@ -48,7 +61,8 @@ const Index = () => {
         </div>
 
 
-        <div className='relative w-full top-20 text-left block lg:hidden  mb-24'>
+        {/**Small screen */}
+        <div className='relative w-full top-20 text-left block lg:hidden mb-24'>
           <div className='bg-white w-1/2 px-8 py-4 text-center primary-text-color'><h1>Hey there!</h1></div>
           <p className='mt-10 w-5/6 mx-auto text-start'> 
             I am Kingston and welcome to my portfolio page! I am a developer, miniature sculptor, and scale modeler. 
@@ -56,7 +70,11 @@ const Index = () => {
           </p>
           <div className='flex justify-evenly w-full mt-5'>
             <button className='workspace-btn' onClick={NavigateToDeveloper}>Developer</button>
-            <button className='primary-button' onClick={NavigateToArts}>Arts</button>
+            <button className='black-minimalist-button' onClick={NavigateToArts}>Arts</button>
+
+          </div>
+          <div className='flex justify-evenly w-full mt-5'>
+          <button className='primary-button' onClick={scrollToWorldPreview}>World Preview</button>
 
           </div>
         </div>
@@ -75,7 +93,7 @@ const Index = () => {
             </Stage>
           </Canvas>
 
-          <Canvas shadows dpr={[1, 2]} className=' bg-blue-100 block lg:hidden' style={{height:'100vh'}}>
+          <Canvas shadows dpr={[1, 2]} className=' bg-blue-100 block lg:hidden' style={{height:'95vh'}}>
             <Stage cpreset="rembrandt" intensity={0.1} contactShadow={true} environment="sunset" >
 
               <group position={[2, 1.25, 1]}>
@@ -87,13 +105,25 @@ const Index = () => {
             </Stage>
           </Canvas>
 
-      <div className='z-0 w-full text-center absolute bottom-6 md:hidden lg:hidden text-dark-gray' >
+         
+     
+      
+      
+
+      <div className='z-0 w-full bg-blue-100 relative md:hidden lg:hidden text-dark-gray flex justify-evenly pb-6' >
+        <div>
         <p style={{fontSize: '11px'}}>
           Interactive only available on desktop and laptop
         </p>
-      </div>
+        <button className='primary-button' onClick={scrollToContent}>Back to Top</button>
 
+        </div>
+      
+      </div>
     </div>
+
+    <div id='index-world-preview'></div>
+
     </Suspense>
   )
 }
