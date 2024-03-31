@@ -13,6 +13,11 @@ import mg3 from '../assets/images/Digital/mg3.jpg'
 import HomeButton from '../components/HomeButton'
 const DigitalModelGallery = () => {
 
+  const element = document.getElementById('root');
+  if (element) {
+    element.style.touchAction = '';
+  }
+  
   //Default assume is large screen
   const [isSmallScreen, setIsSmallScreen] = useState(false)
 

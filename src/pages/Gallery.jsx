@@ -12,6 +12,10 @@ import imgSeven from '../assets/images/Gallery/sas.jpg'
 import instaIcon from '../assets/icons/instagram-black-white.png'
 import HomeButton from '../components/HomeButton'
 const Gallery = () => {
+  const element = document.getElementById('root');
+  if (element) {
+    element.style.touchAction = '';
+  }
 
   function navigateToInstagram(){
     window.open('https://www.instagram.com/king_st0ne/')

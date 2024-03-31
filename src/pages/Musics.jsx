@@ -7,13 +7,18 @@ import HomeButton from '../components/HomeButton'
 
 const Musics = () => {
 
-    function ScrollToCollection(){
-        console.log("scroll detected")
-        const section = document.getElementById('collection');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+const element = document.getElementById('root');
+  if (element) {
+    element.style.touchAction = '';
+  }
+
+function ScrollToCollection(){
+    console.log("scroll detected")
+    const section = document.getElementById('collection');
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
     }
+}
   return (
     <>
         <NavigationBar backgroundFill={false}></NavigationBar>
