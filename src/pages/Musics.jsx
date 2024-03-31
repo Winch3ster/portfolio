@@ -61,7 +61,7 @@ const Musics = () => {
             <h1 className='sub-header text-start ml-10 block md:hidden lg:hidden'>Collections</h1>
 
             
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10 gap-y-10 px-14 pt-10 w-5/6 mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10 gap-y-10 px-0 md:px-14 lg:px-14 pt-10 w-5/6 mx-auto">
                 
                 
                 <div className='music-image'>

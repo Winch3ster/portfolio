@@ -54,4 +54,11 @@ To be done
 -Change indicator to only --> Developer, Arts, Contact me /
 
 
+
+
 -implement email feature /
+
+
+
+- Touch action
+- Guitar page
