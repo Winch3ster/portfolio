@@ -106,7 +106,7 @@ export function Model(props) {
       </group>
       
 
-      <RigidBody type='fixed' colliders='trimesh' position={[-1.9,0.5,2.7]}>
+      <RigidBody type='fixed' colliders='trimesh' position={[-1.9,1,2.7]}>
 
         <mesh
           castShadow

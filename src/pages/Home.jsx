@@ -130,7 +130,7 @@ const Home = () => {
 
         <Text  rotation-y={0.4} position={[-45, 6, 0]} color="gray" scale={[10, 10, 10]} >Welcome</Text>
 
-        <Physics gravity={[0,-19.81,0]} colliders={false}>
+        <Physics gravity={[0,-19.81,0]} colliders={false} debug>
        
             <ambientLight intensity={0.5}></ambientLight>
 
